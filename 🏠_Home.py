@@ -4,7 +4,7 @@ st.set_page_config(
     page_title="Home", page_icon="🏠",
 )
 
-st.image("/Users/mvideet/Downloads/WhatsApp Image 2022-07-24 at 12.38.39 PM.jpeg")
+st.image("logo.jpeg")
 st.write('''<div style="text-align: center;"><h1 style="text-alkign: center;"><span style="font-size: xx-large; font-family: 'arial black', 'avant garde'; color: #e22024;">Welcome to Bionostics!</span></h1>''',unsafe_allow_html=True)
 st.header("What We Aim To Solve")
 st.write("According to the World Health Organization (WHO), cardiovascular diseases are the single top cause of mortality worldwide, responsible for 17.9 million deaths each year — which translates into 32% of all global deaths. Simultaneously, common diseases like the Lung Cancer and Diabetes (which are both experiencing a drastic increase in global cases following the COVID-19 pandemic) accounts for long-term health hindrances that are often untreatable, and yields frequent hospital visits for patients carrying the disease. \
@@ -15,4 +15,4 @@ st.write("Hello! We are 2 high schoolers from Houston, Texas and Warsaw, Poland 
 col1, col2 = st.columns(2)
 col1.image("/Users/mvideet/Downloads/WhatsApp Image 2022-07-16 at 4.52.59 PM.jpeg", caption="Videet Mehta: Houston, Texas", width = 224)
 
-col2.image("/Users/mvideet/Downloads/WhatsApp Image 2022-07-24 at 1.18.48 PM.jpeg", caption="Heidi Sui: Warsaw, Poland",width = 224)
+col2.image("heidi.jpeg", caption="Heidi Sui: Warsaw, Poland",width = 224)
