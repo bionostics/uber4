@@ -17,7 +17,7 @@ contact = col2.selectbox("Have you had contact with a COVID patient in the last 
 gathering = col2.selectbox("Have you attended a large gathering in the last 14 days?",["Yes", "No"])
 public = col2.selectbox("Have you visited a public exposed place(EG: Pool) recently?",["Yes", "No"])
 family = col2.selectbox("Does anyone in your family work in a public exposed place(EG: Hospital) recently?",["Yes", "No"])
-model = joblib.load('uber4/covid.pkl')
+model = joblib.load('covid.pkl')
 input_arr = [breath, fever,dry_cough,sore_throat,hypertension,fatigue,travel,contact,gathering,public,family]
 symptoms =  ['Breathing Problem', 'Fever', 'Dry Cough', 'Sore throat', 'Hyper Tension', 'Fatigue ', 'Abroad travel', 'Contact with COVID Patient', 'Attended Large Gathering', 'Visited Public Exposed Places', 'Family working in Public Exposed Places']
 

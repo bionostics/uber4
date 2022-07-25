@@ -7,7 +7,7 @@ st.set_page_config(
     page_title="Heart Disease", page_icon="💒",
 )
 
-image = imageio.imread('/Users/mvideet/PycharmProjects/uberfinal1/heart.jpg')
+image = imageio.imread('heart.jpg')
 st.write("# Predicted Chance of Getting Cardiovascular Heart Disease in the Next Few Years")
 st.write(
     """This is a machine learning based approcach to predict cardiovascular disease through data. Please keep in mind that this is in no way a substitution of a profession diagnosis by a doctor.""")
@@ -24,7 +24,7 @@ else:
     gender = 0
 input_arr = [age, gender, cigsPerDay,chol,sys_bp,glucose]
 input = pd.DataFrame([input_arr], columns = ['age','male','cigsPerDay','totChol','sysBP','glucose'])
-model = joblib.load('uber4/heart_model.pkl')
+model = joblib.load('heart_model.pkl')
 prediction = model.predict(input)
 
 if st.button('Predict'):
