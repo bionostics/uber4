@@ -2,16 +2,7 @@ import math
 import streamlit as st
 import joblib
 import pandas as pd
-import os
-import joblib
-import numpy as np
 import pandas as pd
-
-import warnings
-import sklearn.metrics
-from numpy import ravel
-from sklearn import metrics
-from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
@@ -30,7 +21,6 @@ df_new = pd.concat([pre_dia_os,dia_os, non_dia], axis=0)
 df_new['Diabetes_012'].value_counts()
 y=df_new.iloc[:,:1]
 x = df_new.iloc[:, 1:]
-print((y.iloc[1]))
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=(0.2))
 scaler=MinMaxScaler()
 X_train_scaled = pd.DataFrame(scaler.fit_transform(x_train),columns=x_train.columns)
