@@ -2,33 +2,6 @@ import math
 import streamlit as st
 import joblib
 import pandas as pd
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
-
-df = pd.read_csv("diabetes.csv")
-df = df.drop_duplicates()
-df.drop('PhysHlth',inplace=True, axis=1)
-df.drop('Education',inplace=True, axis=1)
-df.drop('Income',inplace=True, axis=1)
-df.drop('CholCheck',inplace=True, axis=1)
-non_dia= df[df['Diabetes_012'] == 0]
-pre_dia = df[df['Diabetes_012'] == 1]
-dia = df[df['Diabetes_012'] == 2]
-pre_dia_os = pre_dia.sample(len(non_dia), replace=True)
-dia_os = dia.sample(len(non_dia), replace=True)
-df_new = pd.concat([pre_dia_os,dia_os, non_dia], axis=0)
-df_new['Diabetes_012'].value_counts()
-y=df_new.iloc[:,:1]
-x = df_new.iloc[:, 1:]
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=(0.2))
-scaler=MinMaxScaler()
-X_train_scaled = pd.DataFrame(scaler.fit_transform(x_train),columns=x_train.columns)
-X_test_scaled = pd.DataFrame(scaler.transform(x_test),columns=x_test.columns)
-from sklearn.ensemble import RandomForestClassifier
-model= RandomForestClassifier(n_estimators=100,
-                                 min_samples_split=5, random_state=0)
-model.fit(X_train_scaled, y_train.values.ravel())
 st.set_page_config(page_title="Diabetes Predictor ", page_icon="🍭")
 st.markdown("# Diabetes  Predictor")
 st.write(
@@ -68,6 +41,7 @@ for i in range(len(inp_arr)-2):
             inp_arr[i]=0.0
 input = pd.DataFrame([inp_arr], columns = ['HighBP', 'HighChol', 'BMI', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost', 'GenHlth', 'MentHlth', 'DiffWalk', 'Sex', 'Age']
 )
+model = joblib.load('/Users/mvideet/diabetes.pkl')
 y_pred = model.predict(input)
 if st.button('Predict'):
     if y_pred[0]==0:
