@@ -24,7 +24,7 @@ else:
     gender = 0
 input_arr = [age, gender, cigsPerDay,chol,sys_bp,glucose]
 input = pd.DataFrame([input_arr], columns = ['age','male','cigsPerDay','totChol','sysBP','glucose'])
-model = joblib.load('/Users/mvideet/PycharmProjects/uberfinal1/heart_model.pkl')
+model = joblib.load('uber4/heart_model.pkl')
 prediction = model.predict(input)
 
 if st.button('Predict'):
