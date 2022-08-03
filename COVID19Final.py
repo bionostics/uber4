@@ -1,5 +1,8 @@
 import pandas as pd
 import joblib
+import tensorflow as tf
+
+
 from sklearn.utils import shuffle
 covid = pd.read_csv("/Users/mvideet/PycharmProjects/CAC/Covid Dataset.csv")
 covid=covid.drop('Running Nose',axis=1)
