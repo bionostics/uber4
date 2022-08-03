@@ -1,9 +1,9 @@
-# import streamlit as st
-# import imageio
-# st.set_page_config(
-#     page_title="Home", page_icon="🏠",
-# )
-#
+import streamlit as st
+import imageio
+st.set_page_config(
+    page_title="Home", page_icon="🏠",
+)
+
 # st.image("logo.jpeg")
 # st.write('''<div style="text-align: center;"><h1 style="text-alkign: center;"><span style="font-size: xx-large; font-family: 'arial black', 'avant garde'; color: #e22024;">Welcome to Bionostics!</span></h1>''',unsafe_allow_html=True)
 # st.header("What We Aim To Solve")
