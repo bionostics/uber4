@@ -12,6 +12,4 @@ st.set_page_config(
 # # st.header("About Us")
 # # st.write("Hello! We are 2 high schoolers from Houston, Texas and Warsaw, Poland that met through a summer program. As soon as the competition was announced, we started to formulate many ideas. After hours of backfiring ideas, we finally discovered an idea that we both had a passion to pursue. We discovered the bridge between machine learning and medicine.")
 # # col1, col2 = st.columns(2)
-# # col1.image("videet.jpeg", caption="Videet Mehta: Houston, Texas", width = 224)
-# #
-# # col2.image("heidi.jpeg", caption="Heidi Sui: Warsaw, Poland",width = 224)
+
